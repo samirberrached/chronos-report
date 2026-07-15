@@ -1,0 +1,25 @@
+# ============================================================================
+# LOCAL profile - runs against a local PostgreSQL instance
+# Swagger UI is publicly reachable in this profile.
+# ============================================================================
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/chronos?currentSchema=reporting
+    username: ${DB_USERNAME:chronos}
+    password: ${DB_PASSWORD:chronos}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+springdoc:
+  swagger-ui:
+    enabled: true
+
+chronos:
+  security:
+    swagger-public: true

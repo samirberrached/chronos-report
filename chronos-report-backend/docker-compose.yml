@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: chronos-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-chronos}
+      POSTGRES_USER: ${POSTGRES_USER:-chronos}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-chronos}
+    ports:
+      - "5432:5432"
+    volumes:
+      - chronos-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-chronos}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chronos-backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      CHRONOS_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-chronos}
+      CHRONOS_DATASOURCE_USERNAME: ${POSTGRES_USER:-chronos}
+      CHRONOS_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-chronos}
+      CHRONOS_JWT_SECRET: ${CHRONOS_JWT_SECRET:-change-me-to-a-long-random-secret-at-least-32-chars}
+      CHRONOS_JWT_ACCESS_TOKEN_EXPIRATION_MS: ${CHRONOS_JWT_ACCESS_TOKEN_EXPIRATION_MS:-900000}
+      CHRONOS_JWT_REFRESH_TOKEN_EXPIRATION_MS: ${CHRONOS_JWT_REFRESH_TOKEN_EXPIRATION_MS:-86400000}
+    ports:
+      - "8080:8080"
+
+volumes:
+  chronos-pgdata:
