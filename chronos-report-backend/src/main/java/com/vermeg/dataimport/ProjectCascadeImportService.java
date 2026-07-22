@@ -45,7 +45,7 @@ public class ProjectCascadeImportService {
     @Autowired private ActivityRepository activityRepository;
 
     private static final String FILE_PATH =
-            "C:\\Users\\berra\\OneDrive\\Bureau\\chronos-report\\data-cleaning\\employee_time_clean.csv";
+            "C:\\Users\\berra\\OneDrive\\Bureau\\chronos-report\\data-cleaning\\employee_time_clean_cleaned.csv";
 
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 

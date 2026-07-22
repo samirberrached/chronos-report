@@ -23,7 +23,7 @@ public class ProjectImportService {
     @Autowired private BillingEntityRepository billingEntityRepository;
 
     private static final String FILE_PATH =
-            "C:\\Users\\berra\\OneDrive\\Bureau\\chronos-report\\data-cleaning\\employee_time_clean.csv";
+            "C:\\Users\\berra\\OneDrive\\Bureau\\chronos-report\\data-cleaning\\employee_time_clean_cleaned.csv";
 
     @Transactional
     public void cleanAndImportLevel1() throws IOException {

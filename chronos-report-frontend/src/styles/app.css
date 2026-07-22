@@ -1,0 +1,285 @@
+/* Styles applicatifs (dashboards) — réutilise les tokens de charte VERMEG définis dans index.css */
+
+.vermeg-logo {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.login-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg-alt);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.login-card .vermeg-logo {
+  height: 26px;
+  margin-bottom: 24px;
+}
+
+.login-card h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.login-subtitle {
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.input,
+.select {
+  font: inherit;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.input:focus,
+.select:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 1px;
+}
+
+.btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--secondary-bg);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.app-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  flex-wrap: wrap;
+}
+
+.top-bar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.top-bar .brand-suffix {
+  font-weight: 700;
+  color: var(--text-h);
+  font-size: 15px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+}
+
+.top-bar .profile-badge {
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.top-bar .status {
+  font-size: 13px;
+}
+
+.top-bar .status.error {
+  color: var(--accent);
+}
+
+.page-content {
+  flex: 1;
+  padding: 24px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.page-content h1 {
+  font-size: 26px;
+  text-align: left;
+  margin: 0 0 20px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.kpi-card .kpi-label {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.kpi-card .kpi-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.panel h2 {
+  font-size: 16px;
+  text-align: left;
+  margin: 0 0 16px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.data-table th {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.data-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.data-table th.sortable:hover {
+  color: var(--accent);
+}
+
+.table-filter {
+  width: 100%;
+  max-width: 280px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.empty-state {
+  font-size: 14px;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.chart-toggle {
+  font: inherit;
+  font-size: 12px;
+  margin-top: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--secondary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.chart-toggle:hover {
+  opacity: 0.8;
+}

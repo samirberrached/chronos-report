@@ -44,7 +44,7 @@ public class EmployeeStructureImportService {
     @Autowired private OrganizationalUnitMemberRepository ouMemberRepository;
 
     private static final String FILE_PATH =
-            "C:\\Users\\berra\\OneDrive\\Bureau\\chronos-report\\data-cleaning\\employee_time_clean.csv";
+            "C:\\Users\\berra\\OneDrive\\Bureau\\chronos-report\\data-cleaning\\employee_time_clean_cleaned.csv";
 
     // Configuration exacte pour ton format de date "dd/MM/yyyy"
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
